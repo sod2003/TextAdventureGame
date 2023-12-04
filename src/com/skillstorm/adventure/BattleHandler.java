@@ -31,13 +31,20 @@ public class BattleHandler {
 		if ( playerAttack > enemyAttack) {
 			System.out.format("You defeated the %s!\n", enemy.getType());
 			result = true;
-			System.out.format("You gained a %s from the defeated %s.\n",
-					enemy.getTreasure(), enemy.getType());
-			player.addInventory(new String[] {enemy.getTreasure()});
+			enemiesDefeated++;
+			System.out.format("You loot the body of the %s.\n", enemy.getType());
+			loot(player, enemy.getTreasure());
 		} else {
 			System.out.format("The %s defeated you!\n", enemy.getType());
 		}
 		return result;
+	}
+
+	private void loot(Player player, String[] treasures) {
+		for (String treasure : treasures) {
+			System.out.println("You gained a " + treasure);
+		}
+		player.addInventory(treasures);
 	}
 	
 }
