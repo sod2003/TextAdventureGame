@@ -35,7 +35,8 @@ public class BattleHandler {
 			System.out.format("You loot the body of the %s.\n", enemy.getType());
 			loot(player, enemy.getTreasure());
 		} else {
-			System.out.format("The %s defeated you!\n", enemy.getType());
+			System.out.format("The %s defeated you!\nPerhaps it will take more "
+					+ "than muscle to defeat this foe.\n", enemy.getType());
 		}
 		return result;
 	}
