@@ -1,10 +1,9 @@
 package com.skillstorm.adventure;
 
 public class ScenarioHandler {
-	Scenario[] scenes;
+	private Scenario[] scenes;
 
 	public ScenarioHandler(Scenario[] scenes) {
-		super();
 		this.scenes = scenes;
 	}
 
@@ -14,6 +13,10 @@ public class ScenarioHandler {
 
 	public void setScenes(Scenario[] scenes) {
 		this.scenes = scenes;
+	}
+	
+	public void generateScenes() {
+		
 	}
 	
 }
