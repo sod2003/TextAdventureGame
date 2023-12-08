@@ -1,4 +1,5 @@
 package com.skillstorm.adventure;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BattleHandler {
@@ -21,7 +22,7 @@ public class BattleHandler {
 		this.enemiesDefeated = enemiesDefeated;
 	}
 	
-	public boolean battle(Player player, Enemy enemy, Scanner scanner) {
+	public boolean battle(Player player, Enemy enemy) {
 		battleCount++;
 		boolean result = false;
 		System.out.format("You square off with the %s.\nRolling attacks...\n",
@@ -39,8 +40,8 @@ public class BattleHandler {
 		return result;
 	}
 
-	private void loot(Player player, String[] treasures) {
-		for (String treasure : treasures) {
+	private void loot(Player player, ArrayList<Treasure> treasures) {
+		for (Treasure treasure : treasures) {
 			System.out.println("You gained a " + treasure);
 		}
 		player.addInventory(treasures);

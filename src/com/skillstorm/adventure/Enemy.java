@@ -1,10 +1,12 @@
 package com.skillstorm.adventure;
+import java.util.ArrayList;
 
 public class Enemy extends Actor {
 	private String type;
-	private String[] treasure;
+	private ArrayList<Treasure> treasure = new ArrayList<Treasure>();
 
-	public Enemy(int muscle, int mysticality, int moxie, String type, String[] treasure) {
+	public Enemy(int muscle, int mysticality, int moxie, String type, 
+			ArrayList<Treasure> treasure) {
 		super(muscle, mysticality, moxie);
 		this.type = type;
 		this.treasure = treasure;
@@ -18,12 +20,15 @@ public class Enemy extends Actor {
 		this.type = type;
 	}
 
-	public String[] getTreasure() {
+	public ArrayList<Treasure> getTreasure() {
 		return treasure;
 	}
 
-	public void setTreasure(String[] treasure) {
+	public void setTreasure(ArrayList<Treasure> treasure) {
 		this.treasure = treasure;
 	}
-	
+
+	public String toString() {
+		return String.format("%s", type);
+	}
 }
