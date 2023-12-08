@@ -26,9 +26,7 @@ public class BattleHandler {
 		boolean result = false;
 		System.out.format("You square off with the %s.\nRolling attacks...\n",
 				enemy.getType());
-		double playerAttack = (Math.random() + 1) * player.getMuscle();
-		double enemyAttack = (Math.random() + 1) * enemy.getMuscle();
-		if ( playerAttack > enemyAttack) {
+		if ( player.attack() > enemy.attack()) {
 			System.out.format("You defeated the %s!\n", enemy.getType());
 			result = true;
 			enemiesDefeated++;

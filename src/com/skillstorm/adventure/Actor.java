@@ -34,6 +34,8 @@ public class Actor {
 	public void setMoxie(int moxie) {
 		this.moxie = moxie;
 	}
-	
-	
+
+	public int attack() {
+		return ((int) (Math.random()) * 6 + 1) + muscle;
+	}
 }
