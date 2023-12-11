@@ -13,6 +13,10 @@ public class Player extends Actor {
 		this.role = role;
 	}
 
+	public Object getName() {
+		return name;
+	}
+
 	public String getRole() {
 		return role;
 	}
