@@ -33,11 +33,9 @@ public class Player extends Actor {
 		this.inventory = inventory;
 	}
 	
-	public void addInventory(ArrayList<Treasure> additions) {
-		if (additions != null && additions.isEmpty()) {
-			for (Treasure treasure : additions) {
-				inventory.add(treasure);
-			}
+	public void addInventory(Treasure treasure) {
+		if (treasure != null) {
+			inventory.add(treasure);
 		}
 	}
 	

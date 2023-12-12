@@ -1,27 +1,25 @@
 package com.skillstorm.adventure;
-import java.util.ArrayList;
-import java.util.Scanner;
 
 public class BattleHandler {
 	private int battleCount;
 	private int enemiesDefeated;
-	
+
 	public int getBattleCount() {
 		return battleCount;
 	}
-	
+
 	public void setBattleCount(int battleCount) {
 		this.battleCount = battleCount;
 	}
-	
+
 	public int getEnemiesDefeated() {
 		return enemiesDefeated;
 	}
-	
+
 	public void setEnemiesDefeated(int enemiesDefeated) {
 		this.enemiesDefeated = enemiesDefeated;
 	}
-	
+
 	public boolean battle(Player player, Enemy enemy) {
 		battleCount++;
 		boolean result = false;
@@ -40,11 +38,10 @@ public class BattleHandler {
 		return result;
 	}
 
-	private void loot(Player player, ArrayList<Treasure> treasures) {
-		for (Treasure treasure : treasures) {
+	private void loot(Player player, Treasure treasure) {
+		if (treasure != null) {
 			System.out.println("You gained a " + treasure);
 		}
-		player.addInventory(treasures);
+		player.addInventory(treasure);
 	}
-	
 }
