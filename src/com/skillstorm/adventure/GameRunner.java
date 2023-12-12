@@ -12,7 +12,8 @@ public class GameRunner {
 		System.out.println("Welcome to Sean's Text Adventure Game!\n");
 		player = CharacterCreation.playerDialogue(sc);
 		System.out.format("%s has been created!\n", player);
-		
+		bh = new BattleHandler();
+		sh = new ScenarioHandler();
 		sc.close();
 	}
 	

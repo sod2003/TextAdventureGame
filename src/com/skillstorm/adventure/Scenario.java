@@ -1,15 +1,14 @@
 package com.skillstorm.adventure;
-import java.util.ArrayList;
 
 public class Scenario {
 	private String title;
 	private String scene;
-	private ArrayList<Enemy> enemies;
+	private Enemy enemy;
 	
-	public Scenario(String title, String scene, ArrayList<Enemy> enemies) {
+	public Scenario(String title, String scene, Enemy enemy) {
 		this.title = title;
 		this.scene = scene;
-		this.enemies = enemies;
+		this.enemy = enemy;
 	}
 
 	public String getTitle() {
@@ -28,15 +27,15 @@ public class Scenario {
 		this.scene = scene;
 	}
 
-	public ArrayList<Enemy> getEnemies() {
-		return enemies;
+	public Enemy getEnemy() {
+		return enemy;
 	}
 
-	public void addEnemy(Enemy enemy) {
-		enemies.add(enemy);
+	public void setEnemy(Enemy enemy) {
+		this.enemy = enemy;
 	}
 
-	public void removeEnemy(Enemy enemy ) {
-		enemies.remove(enemy);
+	public void removeEnemy() {
+		enemy = null;
 	}
 }
