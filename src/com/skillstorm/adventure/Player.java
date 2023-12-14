@@ -11,6 +11,7 @@ public class Player extends Actor {
 		super(muscle, mysticality, moxie);
 		this.name = name;
 		this.role = role;
+		inventory = new ArrayList<Treasure>();
 	}
 
 	public Object getName() {

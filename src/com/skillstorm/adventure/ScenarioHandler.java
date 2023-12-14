@@ -31,8 +31,12 @@ public class ScenarioHandler {
 		return scenes.get(currentScene);
 	}
 
-	public void incrementCurrentScene() {
+	public void advanceScene() {
 		currentScene++;
+	}
+
+	public boolean lastScene() {
+		return currentScene == scenes.size() - 1;
 	}
 
 	private Enemy generateEnemy(int enemy) {

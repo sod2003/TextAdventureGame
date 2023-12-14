@@ -27,6 +27,6 @@ public class Treasure {
 	}
 
 	public String toString() {
-		return String.format("%s worth $%d gold pieces.", name, value);
+		return String.format("%s worth %d gold pieces.", name, value);
 	}
 }

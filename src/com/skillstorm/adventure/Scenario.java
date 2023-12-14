@@ -42,7 +42,7 @@ public class Scenario {
 	public String toString() {
 		String str = String.format("%s\n~~~~~~~~~~\n%s", title, scene);
 		if (enemy != null) {
-			str += "A " + enemy + " is blocking the way out.";
+			str += "\nA " + enemy + " is blocking the way out.\n";
 		}
 		return str;
 	}

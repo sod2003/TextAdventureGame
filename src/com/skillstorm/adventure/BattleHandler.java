@@ -24,16 +24,16 @@ public class BattleHandler {
 		battleCount++;
 		boolean result = false;
 		System.out.format("You square off with the %s.\nRolling attacks...\n",
-				enemy.getType());
+				enemy);
 		if ( player.attack() > enemy.attack()) {
-			System.out.format("You defeated the %s!\n", enemy.getType());
+			System.out.format("You defeated the %s!\n", enemy);
 			result = true;
 			enemiesDefeated++;
-			System.out.format("You loot the body of the %s.\n", enemy.getType());
+			System.out.format("You loot the body of the %s.\n", enemy);
 			loot(player, enemy.getTreasure());
 		} else {
 			System.out.format("The %s defeated you!\nPerhaps it will take more "
-					+ "than muscle to defeat this foe.\n", enemy.getType());
+					+ "than muscle to defeat this foe.\n", enemy);
 		}
 		return result;
 	}
