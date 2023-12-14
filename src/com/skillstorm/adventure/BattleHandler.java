@@ -38,9 +38,43 @@ public class BattleHandler {
 		return result;
 	}
 
+	public boolean cast(Player player, Enemy enemy) {
+		boolean result = false;
+		if ( player.magic() > enemy.magic()) {
+			System.out.format("You incinerated the %s!\n", enemy);
+			result = true;
+			battleCount++;
+			enemiesDefeated++;
+			System.out.format("You loot the body of the %s.\n", enemy);
+			loot(player, enemy.getTreasure());
+		} else {
+			System.out.format("You blind the %s with your magic flare. "
+					+ "They suffer a disadvantage now that they are blinded.\n",
+					enemy);
+			enemy.setMuscle(enemy.getMuscle() - 1);
+		}
+		return result;
+	}
+
+	public boolean smooze(Player player, Enemy enemy) {
+		boolean result = false;
+		if ( player.moxie() > enemy.moxie()) {
+			System.out.format("The %s smiles at you, blushing.\n"
+					+ "They willingly give you their treasure and let you pass."
+					+ "\n", enemy);
+			result = true;
+			battleCount++;
+			enemiesDefeated++;
+			loot(player, enemy.getTreasure());
+		} else {
+			System.out.format("The %s is not amused.\n", enemy);
+		}
+		return result;
+	}
+
 	private void loot(Player player, Treasure treasure) {
 		if (treasure != null) {
-			System.out.println("You gained a " + treasure);
+			System.out.println("You gained a " + treasure + "\n");
 		}
 		player.addInventory(treasure);
 	}

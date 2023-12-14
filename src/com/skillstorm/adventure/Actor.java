@@ -38,4 +38,12 @@ public class Actor {
 	public int attack() {
 		return ((int) (Math.random()) * 6 + 1) + muscle;
 	}
+
+	public int magic() {
+		return ((int) (Math.random()) * 6 + 1) + mysticality;
+	}
+
+	public int moxie() {
+		return ((int) (Math.random()) * 6 + 1) + moxie;
+	}
 }

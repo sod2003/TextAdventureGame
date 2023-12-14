@@ -8,7 +8,7 @@ public class GameRunner {
 	private Scanner sc;
 	private boolean endGame = false;
 	private boolean playerDeath = false;
-	
+
 	public GameRunner() {
 		sc = new Scanner(System.in);
 		System.out.println("Welcome to Sean's Text Adventure Game!\n");
@@ -90,10 +90,10 @@ public class GameRunner {
 			winConditions(bh.battle(player, enemy));
 			break;
 		case 2:
-			System.out.println("This is where the magic stuff would happen.");
+			winConditionsOther(bh.cast(player, enemy));
 			break;
 		case 3:
-			System.out.println("This is where the moxie stuff would happen.");			
+			winConditionsOther(bh.smooze(player, enemy));
 			break;
 		default:
 			throw new IllegalArgumentException("Not a valid choice!"
@@ -112,6 +112,18 @@ public class GameRunner {
 			}
 		} else {
 			endGame = playerDeath = true;
+		}
+	}
+
+	private void winConditionsOther(boolean condition) {
+		Scenario scene = sh.currentScene();
+		if (condition) {
+			sh.currentScene().removeEnemy();
+			if (sh.lastScene()) {
+				endGame = true;
+			} else {
+				sh.advanceScene();
+			}
 		}
 	}
 
