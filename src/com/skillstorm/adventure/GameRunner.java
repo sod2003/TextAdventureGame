@@ -145,8 +145,4 @@ public class GameRunner {
 	private boolean isPlayerDead() {
 		return playerDeath;
 	}
-
-	public static void main(String[] args) {
-		GameRunner game = new GameRunner();
-	}
 }
