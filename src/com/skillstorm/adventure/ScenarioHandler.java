@@ -22,7 +22,7 @@ public class ScenarioHandler {
 	public void generateScenes() {
 		ArrayList<Scenario> allScenes = new ArrayList<Scenario>();
 		allScenes.add(new Scenario("The Dungeon", "After days of torture, the "
-				+ "dark wizard has left you alone in the Dungeon with a single "
+				+ "dark sorcerer has left you alone in the Dungeon with a single "
 				+ "guard.", generateEnemy(0)));
 		if (surpriseScene()) {
 			allScenes.add(new Scenario("The Pit", "You're in a dark pit."

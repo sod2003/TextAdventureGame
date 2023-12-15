@@ -37,7 +37,7 @@ public class GameRunner {
 
 	private void intro() {
 		System.out.println("\nYou find yourself in the depths of a Dungeon."
-				+ " You were taken prisoner by the Dark Sorcer, Germlin,"
+				+ " You were taken prisoner by the Dark Sorcerer, Germlin,"
 				+ " while looking for treasure in the wrong place,"
 				+ " at the wrong time.\n");
 	}
