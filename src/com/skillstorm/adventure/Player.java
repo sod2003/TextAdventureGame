@@ -18,6 +18,10 @@ public class Player extends Actor {
 		return name;
 	}
 
+	public void setName(String name) {
+		this.name = name;
+	}
+
 	public String getRole() {
 		return role;
 	}
